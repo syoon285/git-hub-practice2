@@ -1,0 +1,19 @@
+class myMath {
+  constructor(num1,num2) {
+    this.number1 = num1;
+    this.number2 = num2;   
+  }
+  getNumber() {
+    return [this.number1, this.number2];
+  }
+  add() {
+    return this.number1 + this.number2;
+  }
+  subtract () { 
+    return this.number1 - this.number2;
+  }
+  multiply() { 
+    return this.number1 * this.number2;
+  }
+}
+  

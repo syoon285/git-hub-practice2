@@ -1,0 +1,49 @@
+const myGPA = {
+  'A+': 4.5,
+  'A': 4,
+  'B+': 3.5,
+  'B': 3,
+  'C+': 2.5,
+  'C': 2,
+  'D+': 1.5,
+  'D': 1,
+  'F': 0
+}
+
+const myScores = {
+  '생활속의회계': 'C',
+  '논리적글쓰기': 'B',
+  // '독일문화의이해': 'B+',
+  // '기초수학': 'D+',
+  // '영어회화': 'C+',
+  // '인지발달심리학': 'A+'
+}
+
+const myClasses = ['영어회화', '기초수학', '공학수학', '컴퓨터과학개론']
+
+const getExamResult = (scores, requiredClassess, gpa) => {
+  const result = {};
+  for (var key in scores) {
+    console.log(key, 'this is key');
+    const letterGrade = scores[key] // key is '생활속의회계' and value is 'C'
+    console.log(letterGrade,'this is letter grade');
+    const gpaNumber = gpa[letterGrade];
+    console.log(gpaNumber, 'this is GPA number');
+    result[key] = gpaNumber // 2
+    console.log(result,'this is now the result');
+    // { '생활속의회계': 2, '논리적글쓰기': 3}
+  }
+
+  requiredClassess.forEach(
+    function(requiredClass) {
+      // '영어회화'
+      if (!scores[requiredClass]) {
+        result[requiredClass] = 0
+      }
+    }
+  )
+
+  return result
+}
+
+getExamResult(myScores, myClasses, myGPA);

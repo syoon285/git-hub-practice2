@@ -1,0 +1,13 @@
+const rePassword = document.querySelector('input#re-password');
+rePassword.addEventListener('keyup', function(element){
+  const pw = document.querySelector("input#password").value;
+  const rpw = document.querySelector("input#re-password").value;
+  
+  if(pw !== rpw){
+    document.querySelector('p.alert').innerHTML = "비밀번호가 일치하지 않습니다";
+  }else if (pw === rpw){
+    document.querySelector('p.alert').innerHTML = "";
+  }
+  
+});
+
